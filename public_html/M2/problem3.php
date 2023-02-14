@@ -10,7 +10,7 @@ function bePositive($arr) {
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
     //hint: may want to use var_dump() to show final data types
 
-
+    //mm2654
     foreach($arr as $num){
         //echo gettype($num);
         if(gettype($num)=="string"){
