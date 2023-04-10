@@ -25,7 +25,31 @@ reset_session();
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
-
+        const email = form.email.value.trim();
+        const password = form.password.value.trim();
+        // Check if email and password are not empty
+        if (!email || !password) {
+            alert("Please enter both email/username and password.");
+            return false;
+        }
+        // Check if email is a valid email address
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        // Check if password meets the minimum length requirement
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return false;
+        }
+        // Validation passed
+        return true;
+        }
+        // Helper function to validate email format using regular expression
+        function isValidEmail(email) {
+        const emailRegex = /\S+@\S+\.\S+/;
+        return emailRegex.test(email);
+        }
         return true;
     }
 </script>

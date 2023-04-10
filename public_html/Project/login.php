@@ -1,23 +1,50 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 ?>
+<div class="box">
 <form onsubmit="return validate(this)" method="POST">
 <div>
-<label for="email">Email/Username</label>
+<label for="email">Email/Username<br /></label>
 <input type="text" name="email" required />
 </div>
 <div>
-<label for="pw">Password</label>
+<label for="pw">Password<br /></label>
 <input type="password" id="pw" name="password" required minlength="8" />
 </div>
 <input type="submit" value="Login" />
 </form>
+</div>
 <script>
 function validate(form) {
 //TODO 1: implement JavaScript validation
 //ensure it returns false for an error and true for success
 //TODO update clientside validation to check if it should
 //valid email or username
+        const email = form.email.value.trim();
+        const password = form.password.value.trim();
+        // Check if email and password are not empty
+        if (!email || !password) {
+            alert("Please enter both email/username and password.");
+            return false;
+        }
+        // Check if email is a valid email address
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        // Check if password meets the minimum length requirement
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return false;
+        }
+        // Validation passed
+        return true;
+        }
+        // Helper function to validate email format using regular expression
+        function isValidEmail(email) {
+        const emailRegex = /\S+@\S+\.\S+/;
+        return emailRegex.test(email);
+        }
 return true;
 }
 </script>

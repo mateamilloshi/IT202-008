@@ -102,8 +102,8 @@ $username = get_username();
         <label for="username">Username</label>
         <input type="text" name="username" id="username" value="<?php se($username); ?>" />
     </div>
-    <!-- DO NOT PRELOAD PASSWORD -->
-    <div>Password Reset</div>
+    <!-- DO NOT PRELOAD PASSWORD --> 
+    <div class="pr">Password Reset</div>
     <div class="mb-3">
         <label for="cp">Current Password</label>
         <input type="password" name="currentPassword" id="cp" />
@@ -125,7 +125,31 @@ $username = get_username();
         let con = form.confirmPassword.value;
         let isValid = true;
         //TODO add other client side validation....
-
+        const email = form.email.value.trim();
+        const password = form.password.value.trim();
+        // Check if email and password are not empty
+        if (!email || !password) {
+            alert("Please enter both email/username and password.");
+            return false;
+        }
+        // Check if email is a valid email address
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        // Check if password meets the minimum length requirement
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return false;
+        }
+        // Validation passed
+        return true;
+        }
+        // Helper function to validate email format using regular expression
+        function isValidEmail(email) {
+        const emailRegex = /\S+@\S+\.\S+/;
+        return emailRegex.test(email);
+        }
         //example of using flash via javascript
         //find the flash container, create a new element, appendChild
         if (pw !== con) {
