@@ -1,7 +1,7 @@
 # Project Name: Simple Shop
-## Project Summary: (Copy from proposal)
+## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
 ## Github Link: [https://github.com/mateamilloshi/IT202-008/tree/prod/public_html/Project](https://github.com/mateamilloshi/IT202-008/tree/prod/public_html/Project)
-## Project Board Link: 
+## Project Board Link: https://github.com/users/mateamilloshi/projects/1
 ## Website Link: https://mm2654-prod.herokuapp.com/Project
 ## Your Name: Matea Milloshi
 
