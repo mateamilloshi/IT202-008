@@ -1,0 +1,137 @@
+.alert-success {
+    background-color: rgb(219, 101, 195);
+    font-family: cursive;
+}
+
+.alert-warning {
+    background-color: yellow;
+    font-family: cursive;
+}
+
+.alert-danger {
+    background-color: red;
+    font-family: cursive;
+}
+
+.alert-info {
+    background-color: rgb(219, 101, 195);
+    font-family: cursive;
+}
+nav li{
+    display: inline; 
+    background-color: none;
+    list-style-type: none;  
+    
+}
+
+nav li a{ 
+    display: inline; 
+    color: rgb(0, 76, 255);
+    text-decoration: none;  
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+}
+
+li a:hover {
+    background-color: #a85cff;
+  }
+/*input{border-radius: 50%;}*/
+body{
+    background-color: rgb(199, 185, 250);
+    /*color: rgb(34, 2, 148);*/
+    text-align: center;
+
+}
+label[for=email]
+{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+    
+}
+
+label[for=pw]
+{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+label[for=username]{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+label[for=np]{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+label[for=cp]{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+label[for=conp]{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+label[for=cp]{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+.pr{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+label[for=name]{
+    font-weight: bold;
+    color: rgb(106, 44, 188);
+}
+
+label[for=d]{
+    font-weight: bold;
+    color: rgb(106, 44, 188);
+}
+
+label[for=confirm]{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+table{
+    margin-left: 46%;
+}
+
+th{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+}
+
+.box {
+    width: 300px;
+    border: 10px solid rgb(165, 104, 234);
+    padding: 50px;
+    margin: 20px;
+    margin-left: 525px;
+    margin-top: 60px;
+    background-color: #dec1e0;
+    border-radius: 25px;
+  }
+
+input[type=submit]{
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+h1{
+    font-weight: bold;
+    color: rgb(49, 0, 113);
+    margin-left: 45px;
+}
