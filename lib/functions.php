@@ -23,6 +23,9 @@ require(__DIR__ . "/reset_session.php");
 
 require(__DIR__ . "/get_url.php");
 
+
+
+
 function paginate($query, $params = [], $per_page = 10)
 {
     global $page; //will be available after function is called
