@@ -2,11 +2,7 @@
 require(__DIR__ . "/../../partials/nav.php");
 
 
-?>
-
-
-
-   
+?>   
     <?php 
     if(isset($_GET['id']))
     {
