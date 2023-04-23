@@ -120,7 +120,7 @@ try {
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <?php foreach ($results as $item) : ?>
             <div class="col">
-                <div class="card bg-dark">
+                <div class="card bg-light">
                     <div class="card-header">
                         Placeholder
                     </div>
@@ -133,6 +133,11 @@ try {
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
                         <a href="product_details.php?id=<?php se($item, "id"); ?>">View details</a>
                     </div>
+                    <?php if (has_role("Admin")) { ?>
+                        <td>
+                        <a href="edit_item.php?id=<?php se($record, "id"); ?>">Edit</a>
+                    </td> 
+                <?php } ?>
                     <div class="card-footer">
                         unit_price: <?php se($item, "unit_price"); ?>
 
