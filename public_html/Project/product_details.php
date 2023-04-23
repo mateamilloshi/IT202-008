@@ -37,7 +37,7 @@ require(__DIR__ . "/../../partials/nav.php");
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <?php foreach ($results as $item) : ?>
             <div class="col">
-                <div class="card bg-dark">
+                <div class="card bg-light">
                     <div class="card-header">
                         Description
                     </div>
@@ -48,7 +48,11 @@ require(__DIR__ . "/../../partials/nav.php");
                     <div class="card-body">
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
-                        
+                       <?php if (has_role("Admin")) { ?>
+                        <td>
+                        <a href="edit_item.php?id=<?php se($record, "id"); ?>">Edit</a>
+                    </td> 
+                <?php } ?>
                     </div>
                     
                 </div>
