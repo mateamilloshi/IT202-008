@@ -14,7 +14,7 @@ if (!in_array($order, ["asc", "desc"])) {
     $order = "asc"; //default value, prevent sql injection
 }
 $name = se($_GET, "name", "", false);
-
+//mm2654 4/24/2023
 //split query into data and total
 $base_query = "SELECT id, name, description, unit_price, stock, image FROM products  ";
 $total_query = "SELECT count(1) as total FROM products";
