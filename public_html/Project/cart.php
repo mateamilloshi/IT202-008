@@ -6,7 +6,6 @@ if(!is_logged_in()){
 }
 
 $results=[];
-$ids = [];
 $db=getDB();
 $stmt= $db ->prepare ("SELECT * from cart WHERE user_id = :user_id");
 try {
@@ -21,25 +20,17 @@ try {
 
 ?>
 
-
-
+ 
 <div class="container-fluid">
+
     <h1>Cart</h1>
-    
+   
     <?php
-
-$ids = [];      
+        $ids = [];
         echo("<form method='POST' class='form'><br>");
-       echo(" <div class='row row-cols-1 row-cols-md-5 g-4 '>");
-       
-
-          
+        
         foreach($results as $index => $record){
-           echo("<div class='card bg-dark'>");
-           echo("<div class='card-header card bg-dark'>
-           Cart items");
-           echo("</br>");
-            
+            echo("<div class='cart_item'>");
             foreach($record as $column => $value){
                 if($column === 'id'){
                     $id = $value;
@@ -64,35 +55,27 @@ $ids = [];
                     $cost = $value;
                 }
                 else if($column === 'desired_quantity'){
-                    $quantity = $value;
+                    $quantity  = $value;
                 }
-                else{
-                    echo($value);
-                }
+                
             }
-
-            echo ("<br>");
-            echo("Name: " . $name . "<br>");
-            echo("Unit price: " . $cost . "<br>");
-            echo("Total cost: " . $cost*$quantity . "<br>");
+           
+            echo( "Name: " . $name . "<br>");
             echo("Quantity: <input type='number' min='0' name='quantity". $id . "' value='" . $quantity . "'/><br>");
             echo("<input type='submit' value='Submit' name='submit" . $id . "' /><br>");
             echo("<input type='submit' value='Remove' name = 'remove" . $id . "' /><br>");
-            echo("<input type='submit' name='clear_all' value='Empty cart' class='delete_button'/>");
+           
+            echo("Unit price: " . $cost . "<br>");
+            echo("Total cost: " . $cost*$quantity . "<br>");
             
             echo("</div><br>");
-            echo("</div><br>");           
+            echo("<input type='submit' name='clear_all' value='Empty cart' class='delete_button'/>");
         }
-        echo("</div>");
-       
-        echo("</div></br>");
-        echo("</form>");
+        echo("</form>")
 
 ?>
 
-
-                    
-                
+</div>
 
 <?php
         if(isset($_POST["clear_all"])){
@@ -131,9 +114,6 @@ $ids = [];
         }
     ?>
 </div>
-
-
-
 <?php
 require_once(__DIR__ . "/../../partials/footer.php");
 ?>
