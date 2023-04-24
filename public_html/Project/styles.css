@@ -1,3 +1,4 @@
+
 .alert-success {
     background-color: rgb(219, 101, 195);
     font-family: cursive;
@@ -40,10 +41,10 @@ nav li a{
 li a:hover {
     background-color: #a85cff;
   }
-/*input{border-radius: 50%;}*/
+
 body{
     background-color: rgb(199, 185, 250);
-    /*color: rgb(34, 2, 148);*/
+   
     text-align: center;
 
 }
@@ -104,11 +105,11 @@ label[for=confirm]{
     font-weight: bold;
     color: rgb(49, 0, 113);
 }
-
+/*
 table{
     margin-left: 46%;
 }
-
+*/
 th{
     font-weight: bold;
     color: rgb(49, 0, 113);
@@ -133,5 +134,6 @@ input[type=submit]{
 h1{
     font-weight: bold;
     color: rgb(49, 0, 113);
-    margin-left: 45px;
+    /*margin-left: 45px;*/
 }
+
