@@ -33,7 +33,7 @@ require(__DIR__ . "/../../partials/nav.php");
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <?php foreach ($results as $item) : ?>
             <div class="col">
-                <div class="card bg-dark">
+                <div class="card bg-light">
                     <div class="card-header">
                         Description
                     </div>
