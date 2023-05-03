@@ -124,10 +124,10 @@ if (isset($_POST["query"])) {
         <input type="hidden" name="stock" value="<?php echo $r["stock"]; ?>"/>
         <div>    
             <?php if (!$has_error) :?>
-            <a type="button" href="checkout.php">Checkout</a> <?php else: ?>
+            <a type="button" href="checkout.php">Place Order</a> <?php else: ?>
                 <a type="button" href="#">Checkout</a>     
             <?php endif;  ?>
-            </div>
+        </div>
         </div> </div> </div>
         <form method="POST">
             <div class="form-group">

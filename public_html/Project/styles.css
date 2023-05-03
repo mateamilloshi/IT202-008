@@ -137,3 +137,20 @@ h1{
     /*margin-left: 45px;*/
 }
 
+.card{
+    margin-left: 40%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.container{
+    margin-top: 1%;
+}
+
+.col-50{
+    margin-top: 1%;
+}
+.col-50 h3{
+    margin-bottom: 1%;
+}
+

@@ -121,7 +121,7 @@ if(($currentpage+1)*$PER_PAGE < $count_results["COUNT(*)"]){
 } ?>
 </div>
 
-<div class="card" style="width: 80%; height:fit-content;">
+<div class="card" style="width: 50%; height:fit-content;">
     <form method="POST">
         <label>Sort by Price</label>
         <input class="form-control" name="total_price" value="Price"></input><br>
@@ -138,7 +138,7 @@ if(($currentpage+1)*$PER_PAGE < $count_results["COUNT(*)"]){
 <?php
 foreach ($results as $index => $value) : ?>
 
-    <div class='card'>
+    <div class='card'style="width: 50%; height:fit-content;">
         <br>Order <?php echo $value["id"] ?>
         <div> Date and time <?php echo $value["created"] ?> </div>
         Total price: <?php echo $value["total_price"] ?>
