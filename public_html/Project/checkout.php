@@ -197,7 +197,7 @@ $r = $stmt->execute([
   </div>
   <div class="col-25">
     <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
+      <h4>Pending Items <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
 
       <?php if (count($results) > 0) : ?>
         <?php foreach ($results as $r) : ?>
@@ -210,7 +210,8 @@ $r = $stmt->execute([
               <p>Name:</a> <span class="price"> <?php echo ($r["name"]); ?> </span></p>
               <p>Price: <span class="price"><?php echo ($r["unit_cost"]); ?></span></p>
               <p>Desired Quantity <span class="price"><?php echo ($r["desired_quantity"]); ?></span></p>
-              
+              <a type="button" href="cart.php">Cart</a>
+              <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span></h2>
 
               <hr>
             </div>
@@ -219,7 +220,7 @@ $r = $stmt->execute([
       <?php endif; ?>
       <input type="hidden" name="subtotal" value="<?php echo ($subtotal); ?>" />
        
-      <h2>Total <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span></h2>
+      
     </div>
   </div>
   </form>

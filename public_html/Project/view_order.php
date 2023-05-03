@@ -25,6 +25,8 @@ $results = [];
         flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
     }
 
+ 
+    
 
 ?>
 
@@ -37,6 +39,7 @@ $results = [];
                 <h5 class="card-title">Item: <?php echo($r["name"]); ?></h5>
                 <div>Price: <?php echo($r["unit_price"]); ?></div>
                 <div>Quantity: <?php echo($r["quantity"]); ?></div>
+                
                 </div>
             <?php endforeach; ?>
                 </div>
