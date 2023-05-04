@@ -41,7 +41,7 @@ if (!has_role("Admin")) {
             <?php foreach ($results as $r): ?>
                 <?php $subtotal += ($r["unit_price"] * $r["quantity"]); ?>
 
-                <div class="card" style="width: 25rem; height: 25rem;margin: 0 auto;">
+                <div class="card" style="width: 25rem; height: auto;margin: 0 auto;">
                 <div class="card-body">
                 <h5 class="card-title">Item: <?php echo($r["name"]); ?></h5>
                 <div>Price: <?php echo($r["unit_price"]); ?></div>
@@ -96,7 +96,7 @@ if ($res) {
 <div class="results" style="margin-left: 50px;">
     <?php if (!empty($result)): ?>
         <h5 style="text-align:center;">Shipping Information</h5>
-                <div class="card" style="width: 15rem; height: 15rem;margin: 0 auto;">
+                <div class="card" style="width: 15rem; height: auto;margin: 0 auto;">
                 <div class="card-body">
             <div><b>First Name: </b><?php echo($result["first_name"]); ?></div>
             <div><b>Last Name: </b><?php echo($result["last_name"]); ?></div>
