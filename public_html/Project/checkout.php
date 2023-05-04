@@ -209,15 +209,16 @@ $r = $stmt->execute([
 
               <p>Name:</a> <span class="price"> <?php echo ($r["name"]); ?> </span></p>
               <p>Price: <span class="price"><?php echo ($r["unit_cost"]); ?></span></p>
-              <p>Desired Quantity <span class="price"><?php echo ($r["desired_quantity"]); ?></span></p>
-              <a type="button" href="cart.php">Cart</a>
-              <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span></h2>
-
+              <p>Desired Quantity: <span class="price"><?php echo ($r["desired_quantity"]); ?></span></p>
+              
               <hr>
-            </div>
-          </div>
+            </div>         
+          </div>    
         <?php endforeach; ?>
-      <?php endif; ?>
+        <a type="button" href="cart.php">Cart</a>
+        <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span></h2>
+        
+        <?php endif; ?>
       <input type="hidden" name="subtotal" value="<?php echo ($subtotal); ?>" />
        
       

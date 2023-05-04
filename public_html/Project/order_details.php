@@ -1,14 +1,12 @@
 <?php
-require(__DIR__ . "/../../../partials/nav.php"); 
+require(__DIR__ . "/../../partials/nav.php"); ?>
 
-
-if (!has_role("Admin")) {
-    flash("You don't have permission to access this page");
-    die(header("Location: ../../login.php"));
-
-
-
+<?php
+if (!is_logged_in()) {
+    flash("You must be logged in to access this page");
+    die(header("Location: login.php"));
 }
+
 ?>
 <?php
 
@@ -16,7 +14,7 @@ if (!has_role("Admin")) {
     $userID = get_user_id();
     $subtotal = 0;
 
-    $results = [];
+$results = [];
    
     $db = getDB();
     $stmt = $db->prepare("SELECT OrderItems.id, order_id, product_id, OrderItems.unit_price, OrderItems.quantity, products.name From OrderItems JOIN products ON products.id = OrderItems.product_id Where order_id=:orderID LIMIT  10");
@@ -27,8 +25,6 @@ if (!has_role("Admin")) {
     else {
         flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
     }
-
-
 
  
     
@@ -56,8 +52,7 @@ if (!has_role("Admin")) {
 
    
     <?php endif; ?>
-
-<?php
+    <?php
 $orderID = se($_GET, "id", -1, false);
 $result = [];
 
@@ -70,27 +65,10 @@ $res = $stmt->execute([":orderID" => $orderID]);
     } else {
         flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
     }
-    
 ?>
 
-<?php
-$orderID = se($_GET, "id", -1, false);
-$result = [];
 
-$db = getDB();
-$stmt = $db->prepare("SELECT orders.id, orders.total_price, orders.first_name, orders.last_name, orders.address, orders.payment_method, orders.money_received, Users.username
-                      FROM orders
-                      JOIN Users ON orders.user_id = Users.id
-                      WHERE orders.id = :orderID");
-$res = $stmt->execute([":orderID" => $orderID]);
 
-if ($res) {
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-} else {
-    flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
-}
-
-?>
 
 
 <div class="results" style="margin-left: 50px;">
@@ -103,11 +81,12 @@ if ($res) {
             <div><b>Address: </b><?php echo($result["address"]); ?></div>
             <div><b>Payment Method: </b><?php echo($result["payment_method"]); ?></div>
             <div><b>Payment Amount: </b><?php echo($result["money_received"]); ?></div>
-            <div><b>Username: </b><?php echo($result["username"]); ?></div>
         </div>
     <?php endif; ?>
     
     </div>
     </div>
 
-
+<?php
+require(__DIR__ . "/../../partials/flash.php");
+?>

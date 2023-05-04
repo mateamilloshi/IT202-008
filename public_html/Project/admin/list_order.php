@@ -21,8 +21,8 @@ $subtotal = 0;
 $address = "";
 
 $db = getDB();
-    $stmt = $db->prepare("SELECT payment_method, total_price, user_id, id, address From orders WHERE user_id = :user_id LIMIT 10");
-    $r = $stmt->execute([":user_id"=> $userID,]);
+    $stmt = $db->prepare("SELECT payment_method, total_price, user_id, id, address From orders ");
+    $r = $stmt->execute();
     if ($r) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -48,16 +48,9 @@ $db = getDB();
                 <?php endforeach; ?>
               
                    
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Total Price:<?php echo($r["total_price"]); ?></h5>
-                </div> 
-            </div> 
+          
            
-               <form method="POST">
-                <div class="form-group">
-                <input type="submit" name="clearAll" value="Empty Cart"/>
-                </form>
+               
 
         <?php endif; ?>
         </div>

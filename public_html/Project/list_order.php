@@ -111,7 +111,7 @@ try {
 
 
 
-<h1>Order History <?php echo($currentpage + 1)?></h1>
+<h1>Order History Page <?php echo($currentpage + 1)?></h1>
 <div class="col">
 <?php if($currentpage >= 1){
     echo("<a class='paginate_button' href = list_order.php?total_price=" . $total_price . "&currentpage=" . $currentpage - 1 . "&start=" . $start . "&end=" . $end . "&by_date=" . $by_date . ">Previous</a>");
@@ -121,19 +121,7 @@ if(($currentpage+1)*$PER_PAGE < $count_results["COUNT(*)"]){
 } ?>
 </div>
 
-<div class="card" style="width: 50%; height:fit-content;">
-    <form method="POST">
-        <label>Sort by Price</label>
-        <input class="form-control" name="total_price" value="Price"></input><br>
-        <label>Sort by date</label>
-        <input type='form-control' value='by_date' /><br>
-        <label>Start</label>
-        <input type='date' name='start' /><br>
-        <label>End</label>
-        <input type='date' name='end' /><br>
-        <input type='submit' name='save' value='submit' /><br>
-    </form>
-</div>
+
 
 <?php
 foreach ($results as $index => $value) : ?>
@@ -144,7 +132,7 @@ foreach ($results as $index => $value) : ?>
         Total price: <?php echo $value["total_price"] ?>
         <div>Payment Method: <?php echo $value["payment_method"] ?> </div>
         Address: <?php echo $value["address"] ?>
-        <div><a href="view_order.php?id= <?php echo $value["id"] ?> ">Order Info</a> </div>
+        <div><a href="order_details.php?id= <?php echo $value["id"] ?> ">Order Details</a> </div>
     </div><br>
 
 <?php endforeach; ?>
