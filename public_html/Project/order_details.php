@@ -32,12 +32,12 @@ $results = [];
 ?>
 
 <h3 style="text-align: center; margin-top: 20px ;">Order Details</h3>
-<div class="results" style="margin-left: 50px;">
+<div class="results" style="margin-left: 50px;margin: 0 auto;">
     <?php if (count($results) > 0): ?>
             <?php foreach ($results as $r): ?>
                 <?php $subtotal += ($r["unit_price"] * $r["quantity"]); ?>
 
-                <div class="card" style="width: 25rem; height: 25rem;">
+                <div class="card" style="width: 25rem; height: auto;margin: 0 auto;">
                 <div class="card-body">
                 <h5 class="card-title">Item: <?php echo($r["name"]); ?></h5>
                 <div>Price: <?php echo($r["unit_price"]); ?></div>
@@ -73,8 +73,8 @@ $res = $stmt->execute([":orderID" => $orderID]);
 
 <div class="results" style="margin-left: 50px;margin: 0 auto;">
     <?php if (!empty($result)): ?>
-        <h5 style="text-align:left ; margin-left: 10px ;">Shipping Information</h5>
-                <div class="card" style="width: 15rem; height: 15rem;">
+        <h5 style="text-align:center ; margin-left: 10px ;margin: 0 auto;">Shipping Information</h5>
+                <div class="card" style="width: 15rem; height: auto;margin: 0 auto;">
                 <div class="card-body">
             <div><b>First Name: </b><?php echo($result["first_name"]); ?></div>
             <div><b>Last Name: </b><?php echo($result["last_name"]); ?></div>
