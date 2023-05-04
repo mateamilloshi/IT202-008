@@ -45,9 +45,9 @@ require(__DIR__ . "/../../partials/nav.php");
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
                        <?php if (has_role("Admin")) { ?>
-                        <td>
-                        <a href="edit_item.php?id=<?php se($record, "id"); ?>">Edit</a>
-                    </td> 
+                       <td>
+                        <a type="button" href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+                       </td> 
                 <?php } ?>
                     </div>
                     
