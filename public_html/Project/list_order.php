@@ -126,7 +126,7 @@ if(($currentpage+1)*$PER_PAGE < $count_results["COUNT(*)"]){
 <?php
 foreach ($results as $index => $value) : ?>
 
-    <div class='card'style="width: 50%; height:fit-content;">
+    <div class='card'style="width: 50%; height:fit-content;margin: 0 auto;">
         <br>Order <?php echo $value["id"] ?>
         <div> Date and time <?php echo $value["created"] ?> </div>
         Total price: <?php echo $value["total_price"] ?>

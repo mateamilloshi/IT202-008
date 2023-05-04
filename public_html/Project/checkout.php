@@ -1,3 +1,4 @@
+
 <?php
 require(__DIR__ . "/../../partials/nav.php"); ?>
 <?php
@@ -146,13 +147,13 @@ $r = $stmt->execute([
 
         <div class="row">
           <div class="col-50">
-            <h3>Billing Address</h3>
+            <h3>Billing Information</h3>
             <label for="fname"><i class="fa fa-user"></i> First Name</label>
             <input type="text" id="fname" name="firstname" placeholder="John">
             <label for="fname"><i class="fa fa-user"></i> Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Doe">
+            <input type="text" id="lname" name="lastname" placeholder="Smith">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="text" id="email" name="email" placeholder="john@example.com"><br>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
             <label for="city"><i class="fa fa-institution"></i> City</label>
@@ -173,6 +174,8 @@ $r = $stmt->execute([
 
           <div class="col-50">
             <h3>Payment</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link>
             <label for="fname">Accepted Cards</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
@@ -196,7 +199,7 @@ $r = $stmt->execute([
     </div>
   </div>
   <div class="col-25">
-    <div class="container">
+    <div class="container" style="text-align: center;">
       <h4>Pending Items <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
 
       <?php if (count($results) > 0) : ?>
@@ -204,11 +207,11 @@ $r = $stmt->execute([
           <?php $subtotal += ($r["unit_cost"] * $r["desired_quantity"]); ?>
 
 
-          <div class="card" style="width: 18rem; ">
+          <div class="card" style="width: 18rem; margin: 0 auto;">
             <div class="card-body">
 
               <p>Name:</a> <span class="price"> <?php echo ($r["name"]); ?> </span></p>
-              <p>Price: <span class="price"><?php echo ($r["unit_cost"]); ?></span></p>
+              <p>Price: <span class="price"><?php echo ($r["unit_cost"]); ?></span>$</p>
               <p>Desired Quantity: <span class="price"><?php echo ($r["desired_quantity"]); ?></span></p>
               
               <hr>
@@ -216,7 +219,7 @@ $r = $stmt->execute([
           </div>    
         <?php endforeach; ?>
         <a type="button" href="cart.php">Cart</a>
-        <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span></h2>
+        <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span>$</h2>
         
         <?php endif; ?>
       <input type="hidden" name="subtotal" value="<?php echo ($subtotal); ?>" />

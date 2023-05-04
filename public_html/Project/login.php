@@ -1,7 +1,7 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 ?>
-<div class="box">
+<div class="box" style="margin: 0 auto;">
 <form onsubmit="return validate(this)" method="POST">
 <div>
 <label for="email">Email/Username<br /></label>
@@ -46,7 +46,7 @@ function validate(form) {
         return emailRegex.test(email);
         }
 return true;
-}
+
 </script>
 <?php
 //TODO 2: add PHP Code

@@ -37,7 +37,7 @@ $db = getDB();
     <div class="results">
         <?php if (count($results) > 0): ?>
                 <?php foreach ($results as $r): ?>
-             <div class="card" style="width: 18rem;">
+             <div class="card" style="width: 18rem;margin: 0 auto;">
                     <div class="card-body">
                     <h5 class="card-title">Order Number : <?php echo($r["id"]); ?></h5>
                     </div>

@@ -71,7 +71,7 @@ $res = $stmt->execute([":orderID" => $orderID]);
 
 
 
-<div class="results" style="margin-left: 50px;">
+<div class="results" style="margin-left: 50px;margin: 0 auto;">
     <?php if (!empty($result)): ?>
         <h5 style="text-align:left ; margin-left: 10px ;">Shipping Information</h5>
                 <div class="card" style="width: 15rem; height: 15rem;">

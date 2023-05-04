@@ -50,6 +50,8 @@ if (isset($_POST["query"])) {
         $r = $stmt->execute([":userID"=> $userID,]);
     }
     
+    
+
     $db = getDB();
     $stmt = $db->prepare("SELECT cart.unit_cost as cart_price, name, product_id,   products.unit_price as product_price, cart.id, cart.desired_quantity, products.stock From
       cart JOIN products on cart.product_id = products.id where cart.user_id=:user_id LIMIT 10");
@@ -63,9 +65,6 @@ if (isset($_POST["query"])) {
     else {
         flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
     }
-    
-    
- 
 
 ?>
 
@@ -74,7 +73,7 @@ if (isset($_POST["query"])) {
     <?php if (count($results) > 0): ?>
             <?php foreach ($results as $r): ?>
                <?php  $subtotal += ($r["cart_price"]*$r["desired_quantity"]); ?>
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;margin: 0 auto;">
                 <div class="card-body">
                 <h5 class="card-title"><?php echo($r["name"]); ?></h5>
                 <div>Price: <?php echo(($r["cart_price"]* $r["desired_quantity"])); ?></div>
