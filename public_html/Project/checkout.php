@@ -91,6 +91,14 @@ if (isset($_POST["paymenttype"])) {
   }
 }
 
+if (isset($_POST["moneyreceived"])) {
+  if ($_POST["moneyreceived"] != $subtotal) {
+    $hasError = true;
+    flash("Payment amount should be equal to the subtotal");
+  }
+}
+
+
 if (count($_POST) > 0 && !$hasError) { //don't need to check again if you swap how the boolean works
   // this is likely longer than your db column $address= $_POST["firstname"]. " " . $_POST["email"]. " ". $_POST["address"]. " ". $_POST["city"]. " ". $_POST["state"]. " ". $_POST["zip"];
   error_log("No error post: " . var_export($_POST, true));
@@ -191,8 +199,6 @@ $r = $stmt->execute([
             <label for="pnum">Payment Amount</label>
             <input type="text" id="pnum" name="moneyreceived" placeholder="$$$">
           </div>
-
-
 
           <input type="submit" name="save" value="Continue to checkout" class="btn btn-outline-primary">
         </div>
