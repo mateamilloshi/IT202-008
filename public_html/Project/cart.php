@@ -116,16 +116,16 @@ if (isset($_POST["query"])) {
             <?php endforeach; ?>
           
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;margin: 0 auto;">
                 <div class="card-body">
                 <h5 class="card-title">Subtotal:<?php echo($subtotal); ?></h5>
                 <input type="hidden" name="pquantity" value="<?php echo $r["desired_quantity"]; ?>"/>
         <input type="hidden" name="stock" value="<?php echo $r["stock"]; ?>"/>
         <div>    
-            <?php if (!$has_error) :?>
-            <a type="button" href="checkout.php">Place Order</a> <?php else: ?>
-                <a type="button" href="#">Checkout</a>     
-            <?php endif;  ?>
+            
+            <a type="button" href="checkout.php">Place Order</a> 
+                   
+           
         </div>
         </div> </div> </div>
         <form method="POST">

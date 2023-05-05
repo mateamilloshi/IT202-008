@@ -65,12 +65,7 @@ if (has_role("Owner")) {
     $query = "SELECT * FROM orders WHERE user_id = :user_id ";
 }
 
-if ($start !== '') {
-    $query = $query . "AND created >= '" . $start . "' ";
-}
-if ($end !== '') {
-    $query = $query . "AND created <= '" . $end . "' ";
-}
+
 if ($total_price) {
     $query = $query . "ORDER BY total_price DESC";
 } else if ($by_date) {
@@ -104,11 +99,7 @@ try {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
 
-
-
-
 ?>
-
 
 
 <h1>Order History Page <?php echo($currentpage + 1)?></h1>
