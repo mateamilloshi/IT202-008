@@ -73,6 +73,7 @@ if (isset($_POST["email"])) {
     flash("There was a problem with Email");
   }
 }
+//mm2654 5/5/2023
 if (isset($_POST["address"])) {
   if (empty($_POST["address"])) {
     $hasError = true;
@@ -91,13 +92,6 @@ if (isset($_POST["state"])) {
     flash("There was a problem with state");
   }
 }
-if (isset($_POST["moneyreceived"])) {
-  if (empty($_POST["moneyreceived"])) {
-    $hasError = true;
-    flash("There was a problem with moneyreceived");
-  }
-}
-
 if (isset($_POST["zip"])) {
   if (empty($_POST["zip"])) {
     $hasError = true;
@@ -106,13 +100,22 @@ if (isset($_POST["zip"])) {
 }
 
 
+if (isset($_POST["moneyreceived"])) {
+  if (empty($_POST["moneyreceived"])) {
+    $hasError = true;
+    flash("There was a problem with moneyreceived");
+  }
+}
+
+
+
+//mm2654 5/5/2023
 if (isset($_POST["paymenttype"])) {
   if (empty($_POST["paymenttype"])) {
     $hasError = true;
     flash("There was a problem with payment type");
   }
 }
-
 
 
 
@@ -152,7 +155,6 @@ if (count($_POST) > 0 && !$hasError) { //don't need to check again if you swap h
   } catch (PDOException $e) {
     error_log("Error inserting items:  " . var_export($e, true));
   }
-
   redirect("view_order.php?id=$orderID");
 }
 
