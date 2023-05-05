@@ -48,6 +48,7 @@ if ($r) {
     if (abs($unit_cost - $unit_price) > 0.01) {
       $diff_percentage = abs($unit_cost - $unit_price) / $unit_price * 100;
       flash(" The unit cost of {$name} in your cart differs from its current unit cost by {$diff_percentage}%");
+      $hasError = true;
     }
   }
 } else {
