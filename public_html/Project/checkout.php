@@ -112,12 +112,7 @@ if (isset($_POST["paymenttype"])) {
   }
 }
 
-if (isset($_POST["moneyreceived"])) {
-  if ($_POST["moneyreceived"] != $subtotal) {
-    $hasError = true;
-    flash("Payment amount should be equal to the subtotal");
-  }
-}
+
 
 
 if (count($_POST) > 0 && !$hasError) { //don't need to check again if you swap how the boolean works
@@ -246,7 +241,7 @@ $r = $stmt->execute([
           </div>    
         <?php endforeach; ?>
         <a type="button" href="cart.php">Cart</a>
-        <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span>$</h2>
+        <h2>Subtotal = <span class="price" style="color:black"><b><?php echo ($subtotal); ?></b></span></h2>
         
         <?php endif; ?>
       <input type="hidden" name="subtotal" value="<?php echo ($subtotal); ?>" />
