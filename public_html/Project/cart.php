@@ -76,7 +76,7 @@ if (isset($_POST["query"])) {
                 <div class="card" style="width: 18rem;margin: 0 auto;">
                 <div class="card-body">
                 <h5 class="card-title"><?php echo($r["name"]); ?></h5>
-                <div>Price: <?php echo(($r["cart_price"]* $r["desired_quantity"])); ?></div>
+                <div>Unit Price: <?php echo(($r["cart_price"])); ?></div>
                 <div>Desired_quantity: <?php echo($r["desired_quantity"]); ?></div>
                 
                 <?php if ($r["cart_price"] != $r["product_price"] ): ?>
