@@ -32,6 +32,27 @@ if ($r) {
   flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
 }
 
+$db = getDB();
+$stmt = $db->prepare("SELECT cart.unit_cost, products.unit_price, cart.desired_quantity, products.name, cart.id, cart.product_id FROM cart JOIN products ON cart.product_id = products.id WHERE cart.user_id = :user_id LIMIT 10");
+$r = $stmt->execute([":user_id" => $userID]);
+if ($r) {
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($results as $row) {
+    $unit_cost = $row['unit_cost'];
+    $unit_price = $row['unit_price'];
+    $name = $row['name'];
+    $product_id = $row['product_id'];
+    $desired_quantity = $row['desired_quantity'];
+    
+    // Check if unit cost matches unit price, with tolerance of 0.01
+    if (abs($unit_cost - $unit_price) > 0.01) {
+      $diff_percentage = abs($unit_cost - $unit_price) / $unit_price * 100;
+      flash(" The unit cost of {$name} in your cart differs from its current unit cost by {$diff_percentage}%");
+    }
+  }
+} else {
+  flash("There was a problem fetching the results " . var_export($stmt->errorInfo(), true));
+}
 
 if (isset($_POST["firstname"])) {
   if (empty($_POST["firstname"])) {
