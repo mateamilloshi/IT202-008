@@ -77,9 +77,11 @@ require_once(__DIR__ . "/../lib/functions.php");
             
             <div class="nav-item">
                     </div></span>
+                    <?php if (is_logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('cart.php'); ?>" style="color: black;"> Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('list_order.php'); ?>" style="color: black;"> Order History</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>" style="color: black;">Logout</a></li>
+                    <?php endif; ?>
             <?php 
            
             
