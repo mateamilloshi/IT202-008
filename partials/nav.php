@@ -48,7 +48,7 @@ require_once(__DIR__ . "/../lib/functions.php");
 <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin Roles
 </a>
-<ul class="dropdown-menu bg-warning" aria-labelledby="rolesDropdown">
+<ul class="dropdown-menu " aria-labelledby="rolesDropdown">
 <li><a class="dropdown-item" href="<?php echo get_url('admin/create_role.php'); ?>">Create</a></li>
 <li><a class="dropdown-item" href="<?php echo get_url('admin/list_roles.php'); ?>">List</a></li>
 <li><a class="dropdown-item" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign</a></li>
@@ -60,20 +60,28 @@ require_once(__DIR__ . "/../lib/functions.php");
                         <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Shop items 
                         </a>
-                        <ul class="dropdown-menu bg-warning" aria-labelledby="rolesDropdown">
+                        <ul class="dropdown-menu " aria-labelledby="rolesDropdown">
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/add_item.php'); ?>">Create</a></li>
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/list_items.php'); ?>">List</a></li>
+                            <li><a class="dropdown-item" href="<?php echo get_url('admin/list_order.php'); ?>">Orders</a></li>
                 
                         </ul>
                     </li>
                    
                 <?php endif; ?>
 <?php if (is_logged_in()) : ?>
-<li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
+
 <?php endif; ?>
 </ul>
 <span class="navbar-text show-balance">
-            <div class="nav-item"><a class="nav-link" href="cart.php">Cart</a></div></span>
+            
+            <div class="nav-item">
+                    </div></span>
+                    <?php if (is_logged_in()) : ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('cart.php'); ?>" style="color: black;"> Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('list_order.php'); ?>" style="color: black;"> Order History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>" style="color: black;">Logout</a></li>
+                    <?php endif; ?>
             <?php 
            
             

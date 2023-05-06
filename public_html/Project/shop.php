@@ -117,7 +117,7 @@ try {
         </div>
     </form>
     
-    <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="row row-cols-1 row-cols-md-5 g-4"style="width: 100%; ">
         <?php foreach ($results as $item) : ?>
             <div class="col">
                 <div class="card bg-light">
@@ -134,8 +134,8 @@ try {
                         <a href="product_details.php?id=<?php se($item, "id"); ?>">View details</a>
                     </div>
                     <?php if (has_role("Admin")) { ?>
-                        <td>
-                        <a href="edit_item.php?id=<?php se($record, "id"); ?>">Edit</a>
+                    <td>
+                        <a type="button" href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
                     </td> 
                 <?php } ?>
                     <div class="card-footer">
@@ -163,7 +163,7 @@ try {
         <?php endforeach; ?>
     </div>
     <!-- this will be moved into a partial file for reusability-->
-
+    <?php include(__DIR__ . "/../../partials/pagination.php"); ?>
 </div>
 <?php
 require(__DIR__ . "/../../partials/footer.php");
