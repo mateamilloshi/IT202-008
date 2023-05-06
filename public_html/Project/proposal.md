@@ -10,13 +10,11 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-  - (add link to milestone1.md from milestone1 branch)  
+  - https://github.com/mateamilloshi/IT202-008/blob/Milestone1/public_html/Project/milestone1.md
 - Milestone 2
-  - (add link to milestone2.md from milestone2 branch)
+  - https://github.com/mateamilloshi/IT202-008/blob/Milestone2/public_html/Project/milestone2.md
 - Milestone 3
-  - (add link to milestone3.md from milestone3 branch)
-- Milestone 4
-  - (add link to milestone4.md from milestone4 branch)
+  - https://github.com/mateamilloshi/IT202-008/blob/Milestone3/public_html/Project/milestone3.md
 - Demo Link
-  - (add youtube link to unlisted or public demo) Note you'll need to verify your youtube account to upload videos > 15mins
+  - https://mediaspace.njit.edu/media/Kaltura+Capture+recording+-+May+5th+2023%2C+7A50A03+pm/1_korhwrap
   
